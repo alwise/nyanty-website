@@ -10,6 +10,7 @@ import { Footer } from "./footer"
 import { AcceptCookies } from "./accept-cookies"
 import { Anchor } from "./anchor"
 import Image from "next/image"
+import { Metadata } from "next"
 
 export function LandingPage() {
 
