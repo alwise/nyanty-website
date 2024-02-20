@@ -128,15 +128,13 @@ export const ImagesSlider = ({
             )}
             style={{
                 perspective: "1000px",
-            }}
-        >
+            }}>
             {areImagesLoaded && children}
             {areImagesLoaded && overlay && (
                 <div
                     className={cn("absolute inset-0 bg-black/40 z-10", overlayClassName)}
                 />
             )}
-
             {areImagesLoaded && (
                 <AnimatePresence>
                     <motion.img
