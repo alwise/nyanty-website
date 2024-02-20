@@ -43,7 +43,6 @@ export function LandingPage() {
       <div className="flex justify-center w-full">
         <div className="grid gap-12 lg:gap-24 grid-cols-1 w-full">
           {/* core value section */}
-
           <div id={navs.coreValues.id} className="w-full py-12 lg:py-24 flex justify-center bg-gray-100 dark:bg-gray-800">
             <div className="container px-4 md:px-6">
               <div className="grid gap-8 lg:gap-12 grid-cols-1">

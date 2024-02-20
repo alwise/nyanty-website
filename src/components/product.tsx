@@ -34,8 +34,8 @@ export function Product() {
     },
   ]
   return (
-    <section id={navs.products.id} className="w-full py-8 bg-gray-100 dark:bg-gray-900 justify-center flex">
-      <div className="container grid gap-4 md:gap-6 px-4 md:px-6 ">
+    <div id={navs.products.id} className="w-full py-12 lg:py-24 flex justify-center">
+      <div className="grid gap-4 md:gap-6 px-4 md:px-6 container ">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Products</h2>
           <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -68,6 +68,6 @@ export function Product() {
 
         </div>
       </div>
-    </section>
+    </div>
   )
 }
