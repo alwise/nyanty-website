@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -74,13 +75,14 @@ export const ImagesSlider = ({
         if (autoplay) {
             interval = setInterval(() => {
                 handleNext();
-            }, 5000);
+            }, 3000);
         }
 
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
             clearInterval(interval);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => { }, []);
@@ -131,7 +133,7 @@ export const ImagesSlider = ({
             {areImagesLoaded && children}
             {areImagesLoaded && overlay && (
                 <div
-                    className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
+                    className={cn("absolute inset-0 bg-black/40 z-10", overlayClassName)}
                 />
             )}
 
@@ -145,6 +147,7 @@ export const ImagesSlider = ({
                         exit={direction === "up" ? "upExit" : "downExit"}
                         variants={slideVariants}
                         className="image h-full w-full absolute inset-0 object-cover object-center"
+                        loading="eager"
                     />
                 </AnimatePresence>
             )}

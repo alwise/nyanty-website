@@ -16,6 +16,12 @@ import { navs } from "@/lib/utils";
 
 export function Header() {
   const [canStickHeader, setCanStickHeader] = useState(false)
+  function scrollToSection(id: string) {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,15 +35,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  function scrollToSection(id: string) {
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+
 
   return (
-    <div className={`bg-gray-100/80 shadow-sm transition-all duration-700 dark:bg-gray-800 ${canStickHeader ? 'sticky top-0 z-50 shadow-gray-400 shadow-sm' : 'top-1'}`}>
+    <div className={`bg-gray-100/80 shadow-sm transition-all duration-700 dark:bg-gray-800 sticky top-0 z-50 ${canStickHeader ? 'shadow-gray-400 shadow-sm' : 'top-0'}`}>
       <div className="px-4 py-2 md:py-3 md:px-6">
         <div className="flex justify-between items-center space-y-2">
           <Link className="flex items-center space-x-2" href="#">
