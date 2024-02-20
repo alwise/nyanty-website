@@ -18,11 +18,11 @@ export function LandingPage() {
       <Header />
       {/* Hero page */}
       <BgImagesSlider imgs={[]} />
-      <div className="grid gap-12 lg:gap-24">
+      <div className="grid gap-12 lg:gap-24 grid-cols-1">
         {/* core value section */}
         <div id={navs.coreValues.id} className="w-full py-12 lg:py-24 flex justify-center bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-8 lg:gap-12">
+            <div className="grid gap-8 lg:gap-12 md:grid-cols-2 sm:grid-cols-1">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Core Values</h2>
@@ -78,7 +78,7 @@ export function LandingPage() {
         {/* services section */}
         <div id={navs.services.id} className="w-full py-12 lg:py-24 flex justify-center">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex flex-col justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -87,10 +87,11 @@ export function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto max-w-5xl grid gap-8 md:gap-12 lg:gap-16">
-              <div className="grid md:grid-cols-3 md:items-start md:gap-8">
-                <div className="flex items-center space-x-4">
-                  <div className="w-80 rounded-lg overflow-hidden">
+            <div className="mx-auto md:grid-cols-3 sm:grid-cols-1 grid gap-8 md:gap-12">
+              <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-3 md:items-start md:gap-8">
+                <div className="flex items-center space-x-4 flex-wrap">
+
+                  <div className="md:w-80 rounded-lg overflow-hidden">
                     <Image
                       alt="Service 1"
                       className="aspect-[1/1] object-cover object-center"
@@ -102,13 +103,16 @@ export function LandingPage() {
                   <div className="space-y-1">
                     <h3 className="text-xl font-bold">Catering</h3>
                     <p className="text-gray-500 dark:text-gray-400">
-                      We provide a range of catering services for all types of events, from corporate functions to private
+                      We provide a range of catering services for all types of events,
+                      from corporate functions to private
                       parties.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-80 rounded-lg overflow-hidden">
+
+
+                <div className="flex items-center space-x-4 flex-wrap">
+                  <div className="md:w-80 rounded-lg overflow-hidden">
                     <Image
                       alt="Service 2"
                       className="aspect-[1/1] object-cover object-center"
@@ -117,7 +121,7 @@ export function LandingPage() {
                       width="120"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 max-w-[320px]">
                     <h3 className="text-xl font-bold">Events</h3>
                     <p className="text-gray-500 dark:text-gray-400">
                       Our events team can help you plan and execute a wide range of events, from conferences to product
@@ -125,8 +129,10 @@ export function LandingPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-80 rounded-lg overflow-hidden">
+
+
+                <div className="flex items-center space-x-4 flex-wrap">
+                  <div className="md:w-80 rounded-lg overflow-hidden">
                     <Image
                       alt="Service 3"
                       className="aspect-[1/1] object-cover object-center"
@@ -135,7 +141,7 @@ export function LandingPage() {
                       width="120"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 max-w-[320px]">
                     <h3 className="text-xl font-bold">Decor</h3>
                     <p className="text-gray-500 dark:text-gray-400">
                       Our team of designers can help you create stunning decor for your event, from floral arrangements to
@@ -372,7 +378,7 @@ export function LandingPage() {
         {/* Contact section */}
         <Contact />
       </div>
-      <Anchor />
+      {/* <Anchor /> */}
       <AcceptCookies />
       <Footer />
     </>

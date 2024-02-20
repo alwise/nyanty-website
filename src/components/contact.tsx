@@ -17,7 +17,6 @@ export function Contact() {
               Want to get in touch? We'd love to hear from you. Fill out the form below to send us a message.
             </p>
           </div>
-
           <form className="space-y-4">
             <div className="grid sm:grid-cols-2 md:grid-cols-1 gap-4">
               <div className="space-y-2">
@@ -43,7 +42,7 @@ export function Contact() {
               <Label htmlFor="message">Message</Label>
               <Textarea className="min-h-[100px]" id="message" placeholder="Enter your message" />
             </div>
-            <Button className="bg-black text-white rounded-xl hover:opacity-90">Send message</Button>
+            <Button className="bg-black w-full text-white rounded-xl hover:opacity-90">Send message</Button>
           </form>
         </div>
         <div className="flex items-center">
