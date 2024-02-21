@@ -8,21 +8,22 @@ import { navs } from "@/lib/utils"
 import { Fade } from "./ui/reveal-on-scroll"
 
 export function Contact() {
+  const duration = 2000
   return (
     <div id={navs.contactUs.id} className="w-full py-12 lg:py-16 flex justify-center bg-gray-100 dark:bg-gray-900">
       <div className="container grid items-start gap-12 px-4 md:gap-16 md:px-6 lg:grid-cols-2">
         <div className="flex flex-col gap-4">
           <div className="space-y-2">
-            <Fade triggerOnce cascade direction="up">
+            <Fade duration={duration} triggerOnce cascade direction="up">
               <h2 className="text-3xl font-bold">Contact us</h2>
             </Fade>
-            <Fade triggerOnce cascade direction="up">
+            <Fade duration={duration} triggerOnce cascade direction="up">
               <p className="text-gray-500 dark:text-gray-400">
                 Want to get in touch? We'd love to hear from you. Fill out the form below to send us a message.
               </p>
             </Fade>
           </div>
-          <Fade triggerOnce cascade direction="up">
+          <Fade duration={duration} triggerOnce cascade direction="up">
             <form className="space-y-4">
               <div className="grid sm:grid-cols-2 md:grid-cols-1 gap-4">
                 <div className="space-y-2">
@@ -54,7 +55,7 @@ export function Contact() {
         </div>
         <div className="flex items-center">
           <div className="w-full aspect-[1/1] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800/40">
-            <Fade style={{ width: "100%", height: "70%" }} triggerOnce cascade direction="up">
+            <Fade duration={duration} style={{ width: "100%", height: "70%" }} triggerOnce cascade direction="up">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7942.0643361333305!2d-0.23794125000000002!3d5.5622505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99e20547a5b3%3A0xb793e32e6526cfe!2sAbosseyokai%2C%20Accra!5e0!3m2!1sen!2sgh!4v1708429786258!5m2!1sen!2sgh" width="600" height="450" style={{
                 border: 0,
                 width: "100%",
@@ -63,7 +64,6 @@ export function Contact() {
               {/* <div /> */}
             </Fade>
           </div>
-
         </div>
       </div>
     </div>

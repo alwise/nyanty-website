@@ -10,7 +10,7 @@ import { Footer } from "./footer"
 import { AcceptCookies } from "./accept-cookies"
 import { Anchor } from "./anchor"
 import Image from "next/image"
-import { Fade, Slide } from "./ui/reveal-on-scroll"
+import { Fade } from "./ui/reveal-on-scroll"
 
 // import { RevealOnScroll } from "./ui/reveal-on-scroll"
 // import { Metadata } from "next"
@@ -145,6 +145,8 @@ export function LandingPage() {
     }
   ]
 
+  const duration = 2000
+
   return (
     <>
       {/* Header & hero section*/}
@@ -159,10 +161,10 @@ export function LandingPage() {
               <div className="grid gap-8 lg:gap-12 grid-cols-1">
                 <div className="space-y-2 text-center">
                   <div className="space-y-2">
-                    <Fade direction="up" triggerOnce cascade>
+                    <Fade duration={duration} direction="up" triggerOnce cascade>
                       <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Core Values</h2>
                     </Fade>
-                    <Fade direction="up" triggerOnce cascade>
+                    <Fade duration={duration} direction="up" triggerOnce cascade>
                       <p className="max-w-[900px] mx-auto text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                         At Nyanty Corporation, our core values are the foundation of everything we do. They guide our decisions,
                         inspire our actions, and define our culture.
@@ -175,15 +177,15 @@ export function LandingPage() {
                     {
                       corValues.map((value) => (
                         <div key={value.id} className="flex items-center space-x-4">
-                          <Fade direction="left" triggerOnce cascade>
+                          <Fade duration={duration} direction="left" triggerOnce cascade>
                             <div className={`w-4 h-4 rounded-full ${value?.color}`} />
                           </Fade>
                           {/* w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-rose-600 */}
                           <div className="space-y-1">
-                            <Fade direction="down" triggerOnce cascade>
+                            <Fade duration={duration} direction="down" triggerOnce cascade>
                               <h3 className="text-xl font-bold">{value?.title}</h3>
                             </Fade>
-                            <Fade direction="up" triggerOnce cascade>
+                            <Fade duration={duration} direction="up" triggerOnce cascade>
                               <p className="text-sm text-gray-500 dark:text-gray-400">
                                 {value?.description}
                               </p>
@@ -203,10 +205,10 @@ export function LandingPage() {
             <div className="container px-4 md:px-6">
               <div className="flex flex-col justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <Fade direction="up" triggerOnce cascade>
+                  <Fade duration={duration} direction="up" triggerOnce cascade>
                     <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
                   </Fade>
-                  <Fade direction="up" triggerOnce cascade>
+                  <Fade duration={duration} direction="up" triggerOnce cascade>
                     <p className="max-w-[900px] mx-auto text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                       We offer a range of innovative solutions designed to help businesses thrive in the digital age. From
                       AI-powered insights to secure cloud migration, we've got you covered.
@@ -218,7 +220,7 @@ export function LandingPage() {
               <div className="mx-auto md:grid-cols-3 mt-2 sm:grid-cols-1 grid gap-8 md:gap-12">
                 {
                   services.map((service) => (
-                    <Fade key={service?.id} direction="right" triggerOnce cascade>
+                    <Fade duration={duration} key={service?.id} direction="right" triggerOnce cascade>
                       <div key={service?.id} className="group justify-center flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800">
                         <Link className="absolute inset-0 z-10" href="#">
                           <span className="sr-only">View</span>
@@ -250,10 +252,10 @@ export function LandingPage() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   {/* reveal title from bottom to top when in viewpot */}
-                  <Fade direction="up" triggerOnce cascade>
+                  <Fade duration={duration} direction="up" triggerOnce cascade>
                     <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl animate-fade-in-up">Meet the Team</h2>
                   </Fade>
-                  <Fade direction="up" triggerOnce cascade>
+                  <Fade duration={duration} direction="up" triggerOnce cascade>
                     <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                       Our team is made up of passionate innovators, experienced technologists, and dedicated professionals who
                       are committed to delivering excellence.
@@ -264,7 +266,7 @@ export function LandingPage() {
               <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-12 lg:gap-24 w-full place-items-center">
                 {
                   teams.map((team) => (
-                    <Fade key={team?.id} direction="up" cascade triggerOnce>
+                    <Fade duration={duration} key={team?.id} direction="up" cascade triggerOnce>
                       <div className="flex flex-col items-center justify-center space-y-2 text-center md:items-start md:space-y-1">
                         <Image
                           alt="Team member 1"
@@ -293,7 +295,7 @@ export function LandingPage() {
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <Fade direction="up" triggerOnce cascade>
+                  <Fade duration={duration} direction="up" triggerOnce cascade>
                     <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Latest News</h2>
                   </Fade>
                   <Fade direction="up" triggerOnce cascade>

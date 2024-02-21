@@ -34,14 +34,15 @@ export function Product() {
       image: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ]
+  const duration = 2000
   return (
     <div id={navs.products.id} className="w-full py-12 lg:py-24 flex justify-center">
       <div className="grid gap-4 md:gap-6 px-4 md:px-6 container ">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <Fade triggerOnce cascade direction="up">
+          <Fade duration={duration} triggerOnce cascade direction="up">
             <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Products</h2>
           </Fade>
-          <Fade triggerOnce cascade direction="up">
+          <Fade duration={duration} triggerOnce cascade direction="up">
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               We offer a wide range of products to meet your needs. Our products are designed to help you achieve your goals and improve your life.
             </p>
@@ -51,7 +52,7 @@ export function Product() {
           {
             //  <!-- Product 1 -->
             products.map((product) => (
-              <Fade key={product?.id} triggerOnce cascade direction="up">
+              <Fade key={product?.id} duration={duration} triggerOnce cascade direction="up">
                 <div className="relative group flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800">
                   <Link className="absolute inset-0 z-10" href="#">
                     <span className="sr-only">View</span>
@@ -70,9 +71,7 @@ export function Product() {
                 </div>
               </Fade>
             ))
-
           }
-
         </div>
       </div>
     </div>
