@@ -5,6 +5,7 @@
 import { navs } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { Fade } from "./ui/reveal-on-scroll"
 
 export function Product() {
   const products = [
@@ -37,31 +38,37 @@ export function Product() {
     <div id={navs.products.id} className="w-full py-12 lg:py-24 flex justify-center">
       <div className="grid gap-4 md:gap-6 px-4 md:px-6 container ">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Products</h2>
-          <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            We offer a wide range of products to meet your needs. Our products are designed to help you achieve your goals and improve your life.
-          </p>
+          <Fade triggerOnce cascade direction="up">
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Our Products</h2>
+          </Fade>
+          <Fade triggerOnce cascade direction="up">
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              We offer a wide range of products to meet your needs. Our products are designed to help you achieve your goals and improve your life.
+            </p>
+          </Fade>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 xl:gap-8 items-start">
           {
             //  <!-- Product 1 -->
             products.map((product) => (
-              <div key={product?.id} className="relative group flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800">
-                <Link className="absolute inset-0 z-10" href="#">
-                  <span className="sr-only">View</span>
-                </Link>
-                <Image
-                  alt="Category 1"
-                  className="object-cover w-full aspect-[16/9]"
-                  height={300}
-                  src={product?.image}
-                  width={500}
-                />
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg md:text-xl text-gray-800 dark:text-gray-200">{product?.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{product?.description}</p>
+              <Fade key={product?.id} triggerOnce cascade direction="up">
+                <div className="relative group flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800">
+                  <Link className="absolute inset-0 z-10" href="#">
+                    <span className="sr-only">View</span>
+                  </Link>
+                  <Image
+                    alt="Category 1"
+                    className="object-cover w-full aspect-[16/9]"
+                    height={300}
+                    src={product?.image}
+                    width={500}
+                  />
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg md:text-xl text-gray-800 dark:text-gray-200">{product?.title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{product?.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Fade>
             ))
 
           }
